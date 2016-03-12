@@ -6,7 +6,7 @@ AsyncTask
 
 Before:
 ```java
-new AysncTask()<String, Integer, String> {
+new AysncTask<String, Integer, String>() {
     @Override protected String doInBackground(String... texts) {
     ...
     }
