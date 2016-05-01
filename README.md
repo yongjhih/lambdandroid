@@ -42,6 +42,7 @@ pager.setOnPageChangeListener(ViewPagers.OnPageChangeListener.onPageChange(posit
 ### AsyncTask
 
 Before:
+
 ```java
 new AysncTask<String, Integer, String>() {
     @Override protected String doInBackground(String... texts) {
@@ -70,6 +71,22 @@ or
 ```java
 LambdaAsyncTask<String, Integer, String>.on(texts -> {}, progress -> {}, result -> {})
     .execute(url);
+```
+
+## TODO
+
+```java
+String url = "https://github.com/yongjhih";
+LambdaAsyncTask<String>.on(texts -> {}, progress -> {}, result -> {})
+    .execute(url);
+```
+
+or
+
+```java
+String url = "https://github.com/yongjhih";
+LambdaAsyncTask.of(url).on(texts -> {}, progress -> {}, result -> {})
+    .execute();
 ```
 
 
