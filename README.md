@@ -93,6 +93,25 @@ anim.addListener(Animations.AnimatorListener
     .on(animation -> {}, animation -> {}, animation -> {}, animation -> {});
 ```
 
+## DrawerListener
+
+```java
+drawer.setDrawerListener(new DrawerLayouts.DrawerListener()
+    .close(view -> {})
+    .open(view -> {})
+    .slide((view, offset) -> {})
+    .state(state -> {})
+    );
+```
+
+or
+
+```java
+drawer.setDrawerListener(DrawerLayouts.DrawerListener
+    .on(view -> {}, view -> {}, (view, offset) -> {}, state -> {}));
+```
+
+
 ## TODO
 
 ```java
