@@ -2,7 +2,44 @@
 
 ## Usage
 
-AsyncTask
+### ViewPager.OnPageChangedListener
+
+Before:
+
+```java
+pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    @Override
+    public void onPageScrollStateChanged(int state) {
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+       System.out.println(position);
+    }
+});
+```
+
+After:
+
+```java
+pager.setOnPageChangeListener(new ViewPagers.OnPageChangeListener().onPageSelected(position -> {
+   System.out.println(position);
+}));
+```
+
+or
+
+```java
+pager.setOnPageChangeListener(new ViewPagers.onPageChange(position -> {
+   System.out.println(position);
+));
+```
+
+### AsyncTask
 
 Before:
 ```java

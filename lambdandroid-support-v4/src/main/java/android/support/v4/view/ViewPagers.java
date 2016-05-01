@@ -4,7 +4,7 @@ public class ViewPagers {
     private ViewPagers() {
     }
 
-    public class OnPageChangeListener implements ViewPager.OnPageChangeListener {
+    public static class OnPageChangeListener implements ViewPager.OnPageChangeListener {
         @Override
         public void onPageScrollStateChanged(int state) {
             if (onPageScrollStateChanged == null) return;
@@ -42,16 +42,16 @@ public class ViewPagers {
             return this;
         }
 
-        public OnPageChangeListener onPageChange(Action1<Integer> onPageSelected) {
-            return onPageSelected(onPageSelected);
+        public static OnPageChangeListener onPageChange(Action1<Integer> onPageSelected) {
+            return new OnPageChangeListener().onPageSelected(onPageSelected);
         }
 
-        public OnPageChangeListener onPageChange(Action1<Integer> onPageSelected, Action1<Integer> onPageScrollStateChanged) {
-            return onPageSelected(onPageSelected).onPageScrollStateChanged(onPageScrollStateChanged);
+        public static OnPageChangeListener onPageChange(Action1<Integer> onPageSelected, Action1<Integer> onPageScrollStateChanged) {
+            return new OnPageChangeListener().onPageSelected(onPageSelected).onPageScrollStateChanged(onPageScrollStateChanged);
         }
 
-        public OnPageChangeListener onPageChange(Action1<Integer> onPageSelected, Action1<Integer> onPageScrollStateChanged, Action3<Integer, Float, Integer> onPageScrolled) {
-            return onPageSelected(onPageSelected).onPageScrollStateChanged(onPageScrollStateChanged).onPageScrolled(onPageScrolled);
+        public static OnPageChangeListener onPageChange(Action1<Integer> onPageSelected, Action1<Integer> onPageScrollStateChanged, Action3<Integer, Float, Integer> onPageScrolled) {
+            return new OnPageChangeListener().onPageSelected(onPageSelected).onPageScrollStateChanged(onPageScrollStateChanged).onPageScrolled(onPageScrolled);
         }
     }
 
