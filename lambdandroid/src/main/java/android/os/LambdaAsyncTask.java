@@ -34,6 +34,21 @@ public class LambdaAsyncTask<Params, Progress, Result> extends AsyncTask<Params,
         return this;
     }
 
+    public static LambdaAsyncTask on(Funcs1<Params, Result> doInBackground) {
+        return new LambdaAsyncTask<String, Integer, String>().doInBackground(doInBackground);
+    }
+
+    public static LambdaAsyncTask on(Funcs1<Params, Result> doInBackground, Actions1<Progress> onProgressUpdate) {
+        return new LambdaAsyncTask<String, Integer, String>().doInBackground(doInBackground)
+            .onProgressUpdate(onProgressUpdate);
+    }
+
+    public static LambdaAsyncTask on(Funcs1<Params, Result> doInBackground, Actions1<Progress> onProgressUpdate, Action1<Result> onPostExecute) {
+        return new LambdaAsyncTask<String, Integer, String>().doInBackground(doInBackground)
+            .onProgressUpdate(onProgressUpdate)
+            .onPostExecute(onPostExecute);
+    }
+
     Funcs1<Params, Result> doInBackground;
     Actions1<Progress> onProgressUpdate;
     Action1<Result> onPostExecute;

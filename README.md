@@ -65,6 +65,14 @@ new LambdaAsyncTask<String, Integer, String>().doInBackground(texts -> {})
     .execute(url);
 ```
 
+or
+
+```java
+LambdaAsyncTask<String, Integer, String>.on(texts -> {}, progress -> {}, result -> {})
+    .execute(url);
+```
+
+
 ## Installation
 
 jitpack.io
