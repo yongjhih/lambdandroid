@@ -34,7 +34,7 @@ pager.setOnPageChangeListener(new ViewPagers.OnPageChangeListener().onPageSelect
 or
 
 ```java
-pager.setOnPageChangeListener(new ViewPagers.onPageChange(position -> {
+pager.setOnPageChangeListener(ViewPagers.OnPageChangeListener.onPageChange(position -> {
    System.out.println(position);
 ));
 ```
