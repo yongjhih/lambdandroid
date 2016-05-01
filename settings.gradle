@@ -1,1 +1,2 @@
 include ':lambdandroid'
+include ':lambdandroid-support-v4'
