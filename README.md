@@ -73,6 +73,26 @@ LambdaAsyncTask<String, Integer, String>.on(texts -> {}, progress -> {}, result 
     .execute(url);
 ```
 
+### TextWatcher
+
+### AnimatorListener
+
+```java
+anim.addListener(new Animations.AnimatorListener()
+    .cancel(animation -> {})
+    .end(animation -> {})
+    .repeat(animation -> {})
+    .start(animation -> {})
+    );
+```
+
+or
+
+```java
+anim.addListener(Animations.AnimatorListener
+    .on(animation -> {}, animation -> {}, animation -> {}, animation -> {});
+```
+
 ## TODO
 
 ```java
