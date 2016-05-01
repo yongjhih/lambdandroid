@@ -71,12 +71,12 @@ jitpack.io
 
 ```gradle
 repositories {
-    jcenter()
     maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    compile 'com.github.yongjhih:lambdandroid:1.0.0'
+    compile 'com.github.yongjhih:lambdandroid:-SNAPSHOT'
+    compile 'com.github.yongjhih:lambdandroid-support-v4:-SNAPSHOT'
 }
 ```
 
