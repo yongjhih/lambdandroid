@@ -34,9 +34,7 @@ pager.setOnPageChangeListener(new ViewPagers.OnPageChangeListener().onPageSelect
 or
 
 ```java
-pager.setOnPageChangeListener(ViewPagers.OnPageChangeListener.onPageChange(position -> {
-   System.out.println(position);
-));
+pager.setOnPageChangeListener(ViewPagers.OnPageChangeListener.onPageChange(position -> {}, state -> {}, (position, offset, px) -> {}));
 ```
 
 ### AsyncTask
